@@ -1,0 +1,687 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Waterloo Arts District</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Art, music and independent shops on a half-mile of Waterloo Road in Cleveland's North Shore Collinwood. Design concept.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Archivo:wght@800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a night-out poster up top, a bright daytime street below. Colors come from the Pop Life facade on Waterloo: cobalt, signal red, sunflower, mint, on deep ink. */
+:root{
+  --ink:#15131E; --ink2:#1E1B2B; --ink3:#2A2639;
+  --paper:#F7F5F1; --white:#FFFFFF; --line:#E6E1D8; --mute:#6B6676; --mute-d:#A9A4B8;
+  --cobalt:#3554FF; --red:#FF4F3A; --sun:#FFC23D; --mint:#2FD3A2; --pink:#FF5CA8;
+  --c-art:var(--red); --c-music:var(--cobalt); --c-shop:var(--sun); --c-food:var(--mint); --c-well:var(--pink); --c-serv:#B8A6FF;
+  --display:"Syne","Arial Black",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}.btn-ghost:hover{border-color:#fff}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--ink)}
+
+/* concept bar */
+.concept{background:#000;color:#CFCBDA;font-size:12.5px}
+.concept .wrap{display:flex;gap:6px 14px;justify-content:center;flex-wrap:wrap;padding-block:7px;text-align:center}
+.concept b{color:#fff}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(21,19,30,.82);backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{display:block;flex:none}
+
+.brand .logo{display:flex;flex-direction:column;align-items:center;gap:4px;color:#fff}
+.brand .lw{display:block;font:900 37px/.9 'Archivo',var(--body);letter-spacing:-.055em;white-space:nowrap}
+.brand .lo{display:inline-block;width:.6em;height:.6em;border-radius:50%;margin-left:.035em;vertical-align:-.005em}
+.brand .lo1{background:linear-gradient(135deg,var(--red) 50%,var(--sun) 50%)}
+.brand .lo2{background:linear-gradient(135deg,var(--mint) 50%,var(--cobalt) 50%)}
+.brand .ls{display:block;font:500 9.5px/1.2 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute-d)}
+.nav{display:flex;gap:2px}
+.nav a{padding:9px 14px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;color:#D9D5E4;transition:background .2s,color .2s}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-260px;top:18%;width:900px;height:900px;background:radial-gradient(closest-side,rgba(53,84,255,.5),transparent);pointer-events:none}
+.hero::after{content:"";position:absolute;right:-260px;top:38%;width:900px;height:900px;background:radial-gradient(closest-side,rgba(255,92,168,.4),transparent);pointer-events:none}
+.street{position:relative;overflow:hidden}
+.street::before{content:"";position:absolute;left:-260px;top:-20%;width:800px;height:800px;background:radial-gradient(closest-side,rgba(53,84,255,.45),transparent);pointer-events:none}
+.street::after{content:"";position:absolute;right:-260px;top:10%;width:800px;height:800px;background:radial-gradient(closest-side,rgba(255,92,168,.35),transparent);pointer-events:none}
+.street>.wrap{position:relative;z-index:1}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;padding-block:clamp(48px,7vw,96px) clamp(40px,6vw,72px)}
+.hero .eyebrow{color:var(--sun)}
+.hero h1{margin-top:22px;font-size:clamp(46px,6.6vw,96px);font-weight:800;letter-spacing:-.04em}
+.hero h1 .hl{background:linear-gradient(90deg,var(--sun),var(--red) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{margin-top:24px;font-size:clamp(17px,1.4vw,19px);color:#CFCBDA;max-width:48ch}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.next{margin-top:28px;display:inline-flex;gap:14px;align-items:center;padding:10px 18px 10px 10px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);text-decoration:none}
+.next .d{display:grid;place-items:center;width:54px;height:54px;border-radius:12px;background:var(--cobalt);font:500 10px/1.1 var(--mono);text-transform:uppercase;text-align:center}
+.next .d b{display:block;font:800 22px/1 var(--display)}
+.next strong{display:block;font-weight:700}
+.next small{color:var(--mute-d);font-size:13.5px}
+/* poster collage */
+.collage{position:relative;aspect-ratio:1/1;max-width:600px;justify-self:end;width:100%}
+.ph{position:absolute;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);border:5px solid #fff;background:#333;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph span{position:absolute;left:10px;bottom:10px;padding:6px 10px;border-radius:999px;background:rgba(21,19,30,.85);color:#fff;font:600 12px/1 var(--body)}
+.ph.p1{left:0;top:4%;width:62%;aspect-ratio:4/3;transform:rotate(-4deg)}
+.ph.p2{right:0;top:0;width:46%;aspect-ratio:3/4;transform:rotate(5deg)}
+.ph.p3{left:12%;bottom:0;width:48%;aspect-ratio:4/3;transform:rotate(3deg)}
+.ph.p4{right:4%;bottom:6%;width:42%;aspect-ratio:1/1;transform:rotate(-6deg)}
+.collage:hover .ph.p1{transform:rotate(-6deg) translate(-8px,-6px)}.collage:hover .ph.p2{transform:rotate(7deg) translate(6px,-8px)}.collage:hover .ph.p3{transform:rotate(1deg) translate(-6px,8px)}.collage:hover .ph.p4{transform:rotate(-8deg) translate(8px,6px)}
+.sticker{position:absolute;z-index:3;left:44%;top:44%;width:116px;height:116px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;text-align:center;font:800 15px/1.05 var(--display);transform:rotate(-12deg);box-shadow:0 14px 30px -10px rgba(0,0,0,.6)}
+.sticker small{display:block;font:500 10px/1.2 var(--mono);letter-spacing:.08em;margin-top:4px}
+/* marquee */
+.marq{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.1);overflow:hidden;padding-block:16px}
+.marq-in{display:flex;width:max-content;animation:mq 50s linear infinite}
+.marq span{display:inline-flex;align-items:center;gap:12px;padding:0 22px;font:700 18px/1 var(--display);white-space:nowrap;color:#E8E5F0}
+.marq i{width:10px;height:10px;border-radius:50%}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* stats */
+.stats{background:var(--white);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stats div{padding:26px 18px;display:flex;flex-direction:column;gap:4px}
+.stats div+div{border-left:1px solid var(--line)}
+.stats b{font:800 clamp(30px,3.4vw,44px)/1 var(--display);letter-spacing:-.03em}
+.stats span{font-size:14px;color:var(--mute)}
+
+/* section */
+section.sec{padding-block:clamp(64px,8vw,112px)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:38px}
+.head>div{display:flex;flex-direction:column;gap:14px;max-width:680px}
+.head h2{font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-.035em}
+.head p{color:var(--mute);font-size:17.5px}
+.eyebrow.c{color:var(--cobalt)}
+
+/* categories */
+.cats{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px}
+.cat{position:relative;overflow:hidden;border-radius:22px;color:#fff;text-align:left;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;isolation:isolate}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.cat::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 20%,rgba(21,19,30,.85)),linear-gradient(0deg,var(--ck),transparent 60%);opacity:.95;mix-blend-mode:normal}
+.cat:hover img{transform:scale(1.06)}
+.cat .pill{position:absolute;top:18px;left:18px;padding:7px 12px;border-radius:999px;background:var(--ck);color:var(--ink);font:500 12px/1 var(--mono);letter-spacing:.06em}
+.cat h3{font-size:clamp(24px,2.4vw,32px);font-weight:800}
+.cat p{font-size:14.5px;color:#E5E2EE;margin-top:6px;max-width:34ch}
+.cat.big{grid-row:span 2}.cat.big h3{font-size:clamp(32px,3.4vw,46px)}
+.cat .go{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:18px;transition:transform .25s}
+.cat:hover .go{transform:rotate(-45deg)}
+
+/* featured */
+.feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.fcard{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--white);border:1px solid var(--line);text-align:left;transition:transform .25s,box-shadow .25s}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px -28px rgba(21,19,30,.45)}
+.fcard .im{position:relative;aspect-ratio:4/3;overflow:hidden}
+.fcard .im img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.fcard:hover .im img{transform:scale(1.05)}
+.fcard .im span{position:absolute;top:14px;left:14px;padding:7px 12px;border-radius:999px;background:var(--ck);color:var(--ink);font:500 11.5px/1 var(--mono);letter-spacing:.06em}
+.fcard .bd{padding:22px;display:flex;flex-direction:column;gap:8px}
+.fcard h3{font-size:28px;font-weight:800}
+.fcard p{color:var(--mute);font-size:15.5px}
+.fcard .addr{font:400 13px/1.4 var(--mono);color:var(--mute)}
+
+/* directory */
+#directory{background:var(--white);border-block:1px solid var(--line)}
+.dir-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:26px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);font-size:14.5px;font-weight:600;transition:background .2s,border-color .2s}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--ck,var(--ink))}
+.chip:hover{border-color:var(--ck,var(--ink))}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search{display:flex;align-items:center;gap:8px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);min-width:min(300px,100%)}
+.search input{border:0;outline:0;background:none;font:inherit;color:var(--ink);padding:11px 0;width:100%}
+.search:focus-within{border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--paper);border:1px solid var(--line);text-align:left;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(21,19,30,.5)}
+.card .im{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--ink2)}
+.card .im img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .im img{transform:scale(1.06)}
+.card .im .tag{position:absolute;left:12px;top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.95);font:500 11px/1 var(--mono);letter-spacing:.04em}
+.card .im .tag i{width:8px;height:8px;border-radius:50%;background:var(--ck)}
+.card .bd{padding:16px 16px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:19px;font-weight:700;letter-spacing:-.015em;line-height:1.12}
+.card .addr{font:400 12.5px/1.4 var(--mono);color:var(--mute)}
+.card p{font-size:14px;color:var(--mute);line-height:1.5;flex:1}
+.card .ft{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;font-weight:700}
+.card .ft span{color:var(--cobalt)}
+
+/* directory: flip tiles */
+.ftiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:190px;grid-auto-flow:dense;gap:14px;perspective:1400px}
+.ftiles.all .big{grid-column:span 2;grid-row:span 2}.ftiles.all .wide{grid-column:span 2}
+.fl{position:relative;padding:0;text-align:left;cursor:pointer;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1);font:inherit;color:inherit}
+.fl:hover,.fl:focus-visible{transform:rotateY(180deg)}
+.fl>span{position:absolute;inset:0;border-radius:16px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.fl .fr{background:var(--ink2)}
+.fl .fr img{width:100%;height:100%;object-fit:cover}
+.fl .fr::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,19,30,.2),transparent 35%,transparent 50%,rgba(21,19,30,.85))}
+.fl .num{position:absolute;z-index:1;top:10px;left:12px;font:800 34px/1 var(--display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px #fff}
+.fl .nm{position:absolute;z-index:1;left:14px;right:14px;bottom:12px;color:#fff;font:700 15px/1.15 var(--body)}
+.fl .bk{transform:rotateY(180deg);background:var(--ck);padding:18px;display:flex;flex-direction:column;gap:8px;color:var(--ink)}
+.fl.w .bk{color:#fff}
+.fl .bk .fcat{font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.fl .bk b{font:800 17px/1.1 var(--display);letter-spacing:-.01em}
+.fl .bk .d{font-size:13px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.fl .bk .ad{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:8px;font:500 11.5px/1.3 var(--mono)}.fl .bk .ad span+span{white-space:nowrap;font-weight:700}
+.ftiles.all .big .num{font-size:96px;-webkit-text-stroke-width:2px}
+.ftiles.all .big .nm{font:800 30px/1.05 var(--display);letter-spacing:-.02em;bottom:18px;left:20px}
+.ftiles.all .big .bk{padding:28px;gap:12px}.ftiles.all .big .bk b{font-size:34px}.ftiles.all .big .bk .d{font-size:17px;-webkit-line-clamp:8}
+.ftiles.all .wide .num{font-size:44px}
+.ftiles.all .wide .bk .d{font-size:15px;-webkit-line-clamp:3}
+@media (max-width:1080px){.ftiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:640px){.ftiles{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:160px;gap:10px}.fl .num{font-size:26px}.ftiles.all .big .num{font-size:60px}.ftiles.all .big .nm{font-size:22px}.fl .bk .d{display:none}.ftiles.all .big .bk .d{display:block;font-size:14px}.fl .nm{font-size:13.5px}}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--mute);border:1.5px dashed var(--line);border-radius:18px}
+
+/* street */
+.street{background:var(--ink);color:#fff}
+.st-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.st-head h2{font-size:clamp(34px,4.2vw,56px);font-weight:800;letter-spacing:-.035em;margin-top:14px}
+.st-head .eyebrow{color:var(--mint)}
+.legend{display:flex;gap:14px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--mute-d)}
+.legend i{width:10px;height:10px;border-radius:50%}
+.st-box{border-radius:22px;background:var(--ink2);border:1px solid rgba(255,255,255,.08);padding:18px 18px 12px}
+.st-scroll{overflow-x:auto;scrollbar-width:thin}
+.st-svg{display:block;min-width:940px;width:100%;height:auto}
+.st-svg text{font-family:var(--mono)}
+.pin{cursor:pointer}
+.pin circle{transition:r .15s}
+.pin:hover circle,.pin:focus circle,.pin.on circle{r:10}
+.pin:focus{outline:none}
+.st-tip{display:flex;align-items:center;gap:14px;min-height:72px;margin-top:10px;padding:10px;border-radius:14px;background:rgba(255,255,255,.04)}
+.st-tip img{width:72px;height:52px;border-radius:10px;object-fit:cover}
+.st-tip b{display:block;font-size:16px}
+.st-tip small{color:var(--mute-d);font:400 13px/1.4 var(--mono)}
+
+/* happenings */
+.ev{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:16px}
+.ev article{position:relative;overflow:hidden;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:10px;color:var(--ink);background:var(--bgc)}
+.ev .main{grid-row:span 2;color:#fff;justify-content:flex-end;min-height:460px;isolation:isolate}
+.ev .main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.ev .main::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,19,30,.1),rgba(21,19,30,.92) 75%)}
+.ev .when{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(21,19,30,.12);font:500 12.5px/1 var(--mono);letter-spacing:.04em}
+.ev .main .when{background:var(--sun);color:var(--ink)}
+.ev h3{font-size:clamp(28px,3vw,40px);font-weight:800}
+.ev p{font-size:16px;max-width:52ch}
+.ev .main p{color:#E5E2EE}
+.ev small{font:400 13px/1.4 var(--mono);opacity:.8}
+
+
+/* happenings: countdown */
+.cd{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.cdm{position:relative;border-radius:22px;overflow:hidden;min-height:460px;color:#fff;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;isolation:isolate}
+.cdm img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.cdm::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,19,30,.15),rgba(21,19,30,.92) 70%)}
+.cdm .when{align-self:flex-start;padding:8px 14px;border-radius:999px;background:var(--sun);color:var(--ink);font:500 12.5px/1 var(--mono);letter-spacing:.04em}
+.cdm h3{font-size:clamp(30px,3.4vw,46px);font-weight:800}
+.cdm p{color:#E5E2EE;max-width:52ch}
+.clock{display:flex;gap:10px;margin-top:8px}
+.clock div{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:12px 16px;text-align:center;min-width:86px}
+.clock b{display:block;font:800 40px/1 var(--display);font-variant-numeric:tabular-nums}
+.clock small{font:500 11px var(--mono);opacity:.8;text-transform:uppercase;letter-spacing:.1em}
+.cds{display:flex;flex-direction:column;gap:16px}
+.cdc{flex:1;border-radius:22px;padding:24px 26px;background:var(--ck);color:var(--ink);display:flex;flex-direction:column;gap:10px}
+.cdc .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cdc .top small{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.cdc .away{padding:7px 12px;border-radius:999px;background:var(--ink);color:#fff;font:500 12px/1 var(--mono);white-space:nowrap}
+.cdc h3{font-size:clamp(26px,2.6vw,34px);font-weight:800}
+.cdc p{font-size:15.5px}
+.cdc .loc{margin-top:auto;font:400 12.5px/1.4 var(--mono);opacity:.8}
+@media (max-width:960px){.cd{grid-template-columns:1fr}.cdm{min-height:420px}}
+@media (max-width:640px){.cdm{padding:22px}.clock{gap:6px}.clock div{min-width:0;flex:1;padding:10px 6px}.clock b{font-size:28px}}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.ab-media{position:sticky;top:96px;display:flex;flex-direction:column;gap:16px}
+.ab-media .pic{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3}
+.ab-media .pic img{width:100%;height:100%;object-fit:cover}
+.ab-media blockquote{margin:0;padding:22px 24px;border-radius:18px;background:var(--cobalt);color:#fff;font:700 21px/1.3 var(--display)}
+.ab-media blockquote small{display:block;margin-top:10px;font:500 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.ab-text h2{font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-.035em;margin:14px 0 18px}
+.ab-text>p{color:var(--mute);font-size:17.5px;margin-bottom:30px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.tl li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:16px 18px;border-radius:16px;background:var(--white);border:1px solid var(--line)}
+.tl .y{font:800 22px/1.1 var(--display);color:var(--ck)}
+.tl h3{font:700 17px/1.3 var(--body);letter-spacing:0;margin-bottom:3px}
+.tl p{color:var(--mute);font-size:14.5px}
+
+
+/* about: arch + stamp + accordion */
+.arch{position:relative}
+.arch .p{aspect-ratio:4/5;border-radius:999px 999px 24px 24px;overflow:hidden;border:6px solid #fff;box-shadow:0 24px 40px -24px rgba(0,0,0,.5)}
+.arch .p img{width:100%;height:100%;object-fit:cover}
+.stamp{position:absolute;right:-18px;top:60px;width:150px;height:150px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+.stamp svg{position:absolute;inset:0;animation:spin 18s linear infinite}
+.stamp text{font-family:var(--mono);fill:var(--ink)}
+.stamp b{font:800 34px/1 var(--display);text-align:center}.stamp b small{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.acc4 details{border-radius:16px;background:var(--white);border:1px solid var(--line);margin-bottom:10px;overflow:hidden}
+.acc4 summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:16px 18px}
+.acc4 summary::-webkit-details-marker{display:none}
+.acc4 summary .y{font:800 22px/1 var(--display);color:var(--ck);width:140px;flex:none;white-space:nowrap}
+.acc4 summary b{font:700 17px/1.3 var(--body);flex:1}
+.acc4 summary i{width:32px;height:32px;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-style:normal;font-size:18px;transition:transform .3s,background .3s,color .3s;flex:none}
+.acc4 details[open] summary i{transform:rotate(45deg);background:var(--ck);color:#fff}
+.acc4 details p{margin:0;padding:0 18px 18px 174px;color:var(--mute);font-size:15px}
+.q4{margin:20px 0 0;padding:22px 24px;border-radius:18px;background:var(--ink);color:#fff;font:700 19px/1.35 var(--display)}
+.q4 small{display:block;margin-top:10px;font:500 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute-d)}
+@media (max-width:960px){.arch{max-width:440px}.stamp{right:-6px;width:120px;height:120px}.stamp b{font-size:26px}}
+@media (max-width:640px){.stamp{right:8px;top:24px}.acc4 details p{padding-left:18px}.acc4 summary .y{width:108px;font-size:18px}}
+/* business CTA */
+.biz{position:relative;overflow:hidden;border-radius:28px;padding:clamp(28px,5vw,64px);background:linear-gradient(120deg,#2B3BFF 0%,#5A2EE0 45%,#FF4F7A 100%);color:#fff;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center}
+.biz::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;border:60px solid rgba(255,255,255,.1)}
+.biz .eyebrow{color:var(--sun)}
+.biz h2{font-size:clamp(32px,4.2vw,56px);font-weight:800;letter-spacing:-.035em;margin-top:14px}
+.biz p{margin-top:16px;color:rgba(255,255,255,.85);font-size:17.5px;max-width:52ch}
+.biz .btn{margin-top:24px}
+.biz ul{position:relative;z-index:1;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.biz li{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);font-size:15.5px;font-weight:500}
+.biz li b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--sun);color:var(--ink);font:800 15px/1 var(--display)}
+
+
+/* business: phones */
+.phones{position:relative;z-index:1;height:440px}
+.pho{position:absolute;width:200px;height:410px;border-radius:32px;background:var(--ink);padding:9px;box-shadow:0 30px 40px -24px rgba(0,0,0,.6);text-align:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.pho .sc{display:flex;flex-direction:column;width:100%;height:100%;border-radius:24px;overflow:hidden;background:#fff;color:var(--ink)}
+.pho .pimg{display:block;height:52%;flex:none}.pho .pimg img{width:100%;height:100%;object-fit:cover}
+.pho .sc b{display:block;padding:12px 12px 4px;font:800 16px/1.1 var(--display);letter-spacing:-.01em}
+.pho .sc small{display:block;padding:0 12px;font:400 10.5px/1.3 var(--mono);color:var(--mute)}
+.pho .prow{display:flex;gap:6px;padding:10px 12px}.pho .prow i{flex:1;height:28px;border-radius:8px;background:#F1EDE6}
+.pho .pc{margin:2px 12px;padding:9px;border-radius:999px;background:var(--ck);text-align:center;font:700 11.5px/1 var(--body);color:var(--ink)}
+.pho.a{left:4%;top:30px;transform:rotate(-8deg)}.pho.b{left:32%;top:0;z-index:2}.pho.c{left:60%;top:30px;transform:rotate(8deg)}
+.pho.a:hover{transform:rotate(-10deg) translateY(-8px)}.pho.b:hover{transform:translateY(-8px)}.pho.c:hover{transform:rotate(10deg) translateY(-8px)}
+@media (max-width:960px){.phones{height:430px;max-width:560px;width:100%;margin:0 auto}}
+@media (max-width:640px){.phones{height:330px}.pho{width:150px;height:308px;border-radius:26px;padding:7px}.pho .sc{border-radius:20px}.pho .sc b{font-size:13px;padding:9px 9px 3px}.pho .sc small{padding:0 9px;font-size:9px}.pho .prow{padding:8px 9px}.pho .prow i{height:20px}.pho .pc{margin:0 9px;font-size:10px;padding:7px}.pho.a{left:0}.pho.b{left:50%;margin-left:-75px}.pho.c{left:auto;right:0}}
+
+/* mobile polish */
+section[id]{scroll-margin-top:72px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.menu-btn i{display:block;width:20px;height:2px;border-radius:2px;background:#fff;transition:transform .25s,opacity .25s}
+.menu-btn[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-btn[aria-expanded="true"] i:nth-child(2){opacity:0}.menu-btn[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:960px){
+  .menu-btn{display:flex;margin-left:auto}
+  .top .wrap{position:relative}
+  .nav.open{display:flex;flex-direction:column;position:absolute;left:var(--gl);right:var(--gr);top:calc(100% + 8px);padding:10px;border-radius:18px;background:var(--ink2);border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 40px -20px rgba(0,0,0,.7)}
+  .nav.open a{padding:14px 16px;font-size:17px}
+}
+@media (max-width:640px){
+  .concept{font-size:11px}.concept .wrap{padding-block:6px}.concept .wrap span+span{display:none}
+  .top .wrap{min-height:60px}
+  .brand .lw{font-size:31px}
+  body .cats{grid-template-columns:1fr 1fr;gap:10px}body .cat{min-height:190px;padding:16px}body .cat.big{grid-column:span 2;min-height:250px}
+  .cat h3{font-size:20px}.cat:not(.big) p{display:none}.cat .go{width:34px;height:34px;top:12px;right:12px}.cat .pill{top:12px;left:12px;font-size:10.5px;padding:6px 9px}
+  .dir-bar{gap:10px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(-1*var(--gr)) 0 calc(-1*var(--gl));padding:2px var(--gr) 6px var(--gl);scrollbar-width:none;width:calc(100% + var(--gl) + var(--gr))}
+  .chips::-webkit-scrollbar{display:none}.chip{flex:none}
+  .head{margin-bottom:24px}.head h2{font-size:34px}
+  section.sec{padding-block:56px}
+  .sent{font-size:22px}
+  .acc4 summary{gap:10px;padding:14px}.acc4 summary .y{width:64px;font-size:17px}.acc4 summary b{font-size:15.5px}
+  .ab-text h2{font-size:34px}
+  .biz{padding:26px 20px;border-radius:22px}.biz h2{font-size:32px}
+  .st-head h2{font-size:32px}
+  .stats div{padding:20px 14px}
+}
+/* footer */
+footer{background:var(--ink);color:var(--mute-d);padding-block:56px 30px}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+footer .brand{color:#fff}
+footer h4{margin:0 0 14px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+footer a{text-decoration:none}footer a:hover{color:#fff}
+.fine{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+
+/* drawer */
+.scrim{position:fixed;inset:0;z-index:70;background:rgba(10,9,16,.55);opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:75;width:min(540px,100%);background:var(--paper);transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);overflow-y:auto;padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.on{transform:none}
+.dr-hero{position:relative;aspect-ratio:4/3;background:var(--ink2);color:#fff;display:flex;align-items:flex-end;padding:24px;isolation:isolate}
+.dr-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.dr-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(21,19,30,.9))}
+.dr-hero .tag{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));left:18px;padding:7px 12px;border-radius:999px;background:var(--ck);color:var(--ink);font:500 11.5px/1 var(--mono)}
+.dr-hero h3{font-size:clamp(32px,6vw,46px);font-weight:800;letter-spacing:-.03em}
+.dr-x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--ink);font-size:22px;display:grid;place-items:center}
+.dr-b{padding:24px;display:flex;flex-direction:column;gap:18px}
+.dr-b>p{font-size:17px}
+.facts{margin:0;border-radius:16px;background:var(--white);border:1px solid var(--line);overflow:hidden}
+.facts div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;padding:13px 16px;font-size:15px}
+.facts div+div{border-top:1px solid var(--line)}
+.facts dt{font:500 11.5px/1.7 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.facts dd{margin:0}
+.dr-act{display:flex;gap:8px;flex-wrap:wrap}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.pitch{padding:16px 18px;border-radius:16px;background:var(--ink);color:#D9D5E4;font-size:14.5px}
+.pitch b{color:var(--sun)}
+
+
+/* on the street: photo sentence */
+.otstreet{position:relative;overflow:hidden;background:var(--ink);color:#fff;text-align:center;padding-block:clamp(40px,5vw,56px)}
+.otstreet::before{content:"";position:absolute;left:-260px;top:-120%;width:800px;height:800px;background:radial-gradient(closest-side,rgba(53,84,255,.5),transparent);pointer-events:none}
+.otstreet::after{content:"";position:absolute;right:-260px;top:-80%;width:800px;height:800px;background:radial-gradient(closest-side,rgba(255,92,168,.4),transparent);pointer-events:none}
+.otstreet .wrap{position:relative;z-index:1}
+.otstreet .eyebrow{color:var(--sun)}
+.sent{margin-top:14px;font:800 clamp(24px,3.2vw,44px)/1.4 var(--display);letter-spacing:-.03em}
+.bub{display:inline-flex;align-items:center;gap:10px;vertical-align:middle;padding:4px 18px 4px 4px;margin:4px;border-radius:999px;background:var(--ck);color:var(--ink);font:800 clamp(18px,2vw,28px)/1 var(--display);letter-spacing:-.02em;transition:transform .25s}
+.bub:hover{transform:rotate(-3deg) scale(1.05)}
+.bub span{width:clamp(38px,3.6vw,52px);height:clamp(38px,3.6vw,52px);border-radius:50%;overflow:hidden;border:3px solid var(--ink);flex:none}
+.bub span img{width:100%;height:100%;object-fit:cover}
+.bub.w{color:#fff}
+/* motion */
+.hero-copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}.hero-copy>*:nth-child(5){animation-delay:.32s}
+.collage .ph{animation:drop .9s cubic-bezier(.2,.7,.2,1) both}
+.collage .p2{animation-delay:.12s}.collage .p3{animation-delay:.24s}.collage .p4{animation-delay:.36s}
+.sticker{animation:pop .6s .6s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes rise{from{opacity:.001;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:.001;translate:0 24px}to{opacity:1;translate:0 0}}
+@keyframes pop{from{opacity:.001;scale:.6}to{opacity:1;scale:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* responsive */
+@media (max-width:1080px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:960px){
+  .nav{display:none}
+  .hero-grid,.about,.biz{grid-template-columns:1fr}
+  .collage{justify-self:center;max-width:520px}
+  .ab-media{position:static}
+  .feat{grid-template-columns:1fr 1fr}
+  .cats{grid-template-columns:1fr 1fr;grid-template-rows:auto}.cat{min-height:220px}.cat.big{grid-row:auto;grid-column:span 2;min-height:280px}
+  .ev{grid-template-columns:1fr}.ev .main{grid-row:auto;min-height:380px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats .wrap{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:640px){
+
+  .top .btn{display:none}
+  .feat,.ft-grid{grid-template-columns:1fr}
+  .cats{grid-template-columns:1fr}.cat.big{grid-column:auto}
+  .grid{gap:10px}.card .bd{padding:12px}.card h3{font-size:16px}.card p{display:none}
+  .tl li{grid-template-columns:1fr;gap:4px}
+  .sticker{width:92px;height:92px;font-size:13px}
+  .search{width:100%}
+}
+</style>
+
+<div class="concept"><div class="wrap"><span><b>Design concept by SiteSwitch.</b> Not the official website of the Waterloo Arts District.</span><span>Photos and details from public listings, for this mockup only.</span></div></div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Waterloo Arts District, home"><span class="logo" aria-hidden="true"><span class="lw">waterl<i class="lo lo1"></i><i class="lo lo2"></i></span><span class="ls">Arts District · Cleveland</span></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  <nav class="nav" id="nav" aria-label="Sections"><a href="#explore">Explore</a><a href="#directory">Directory</a><a href="#street">Map</a><a href="#happenings">Happenings</a><a href="#about">About</a></nav>
+  <a class="btn btn-sun" href="#businesses" style="min-height:42px;padding:9px 18px;font-size:14px">List your business</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">North Shore Collinwood · Cleveland</span>
+      <h1>Art, music &amp; indie shops on <span class="hl">one half-mile</span> of Waterloo</h1>
+      <p class="lead">Galleries, music halls, record stores, kitchens and studios between East 152nd and East 161st Street. Ten minutes east of downtown, just off I-90.</p>
+      <div class="hero-cta"><a class="btn btn-sun" href="#directory">Explore the district</a><a class="btn btn-ghost" href="#street">See the map</a></div>
+      <a class="next" href="#happenings"><span class="d"><span id="nextM">Nov</span><b id="nextN">6</b></span><span><strong>Walk All Over Waterloo</strong><small id="nextT">First Friday of every month</small></span></a>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <div class="ph p1"><img src="img/poplife.jpg" alt=""><span>Pop Life</span></div>
+      <div class="ph p2"><img src="img/framed_hero_a.jpg" alt=""><span style="top:10px;bottom:auto">Framed Gallery</span></div>
+      <div class="ph p3"><img src="img/beachland.jpg" alt=""><span>Beachland Ballroom</span></div>
+      <div class="ph p4"><img src="img/bluearrow.jpg" alt=""><span>Blue Arrow Records</span></div>
+      <div class="sticker">First<br>Fridays<small>5–9 PM</small></div>
+    </div>
+  </div>
+  <div class="marq" aria-hidden="true"><div class="marq-in" id="mq"></div></div>
+</section>
+
+<div class="stats"><div class="wrap">
+  <div><b id="stN">19</b><span>independent places listed</span></div>
+  <div><b>½ mile</b><span>E 152nd St to E 161st St</span></div>
+  <div><b>12×</b><span>First Friday art walks a year</span></div>
+  <div><b>2002</b><span>Waterloo Arts founded</span></div>
+</div></div>
+
+<section class="sec" id="explore"><div class="wrap">
+  <div class="head"><div><span class="eyebrow c">Explore</span><h2>Five ways to spend an afternoon.</h2></div></div>
+  <div class="cats" id="cats"></div>
+</div></section>
+
+<section class="otstreet" aria-label="On the street"><div class="wrap">
+  <span class="eyebrow">On the street</span>
+  <p class="sent">Start at the <button class="bub w" data-n="Beachland Ballroom & Tavern" style="--ck:var(--cobalt)"><span><img src="img/beachland.jpg" alt=""></span>Beachland</button>, see art at <button class="bub w" data-n="Framed Gallery" style="--ck:var(--red)"><span><img src="img/framed.jpg" alt=""></span>Framed</button> and end at <button class="bub" data-n="Pop Life" style="--ck:var(--pink)"><span><img src="img/poplife.jpg" alt=""></span>Pop Life</button>.</p>
+</div></section>
+
+<section class="sec" id="directory"><div class="wrap">
+  <div class="head"><div><span class="eyebrow c">Directory</span><h2>Who’s on Waterloo.</h2><p>Listed west to east. Tap any place to open its page.</p></div><span class="eyebrow" id="count" style="color:var(--mute)"></span></div>
+  <div class="dir-bar">
+    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+    <label class="search" for="q"><span class="sr">Search places</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search name or address"></label>
+  </div>
+  <div class="ftiles all" id="grid"></div>
+</div></section>
+
+<section class="sec street" id="street"><div class="wrap">
+  <div class="st-head"><div><span class="eyebrow">The map</span><h2>One street, door to door.</h2></div><div class="legend" id="legend"></div></div>
+  <div class="st-box">
+    <div class="st-scroll"><svg class="st-svg" id="stSvg" viewBox="0 -14 1200 214" role="group" aria-label="Map of places along Waterloo Road"></svg></div>
+    <div class="st-tip" id="stTip" aria-live="polite"><span><b>Hover or tap a dot</b><small>Each dot sits at its street number on Waterloo Rd.</small></span></div>
+  </div>
+</div></section>
+
+<section class="sec" id="happenings"><div class="wrap">
+  <div class="head"><div><span class="eyebrow c">Happenings</span><h2>Something on, all year.</h2></div></div>
+  <div class="cd">
+    <article class="cdm"><img src="img/waterlooarts.jpg" alt="Mural on Waterloo Road"><span class="when" id="cdWhen">Next First Friday</span><h3>Walk All Over Waterloo</h3><p>Galleries open new shows, kitchens and bars fill up, and there’s live music on the street. Every first Friday, 5–9 PM.</p><div class="clock" id="clock" aria-live="off"></div></article>
+    <div class="cds">
+      <article class="cdc" style="--ck:var(--sun)"><div class="top"><small>Every September</small><span class="away" id="awaySep"></span></div><h3>Waterloo Arts Fest</h3><p>The big one. The 23rd fest in 2026 brought more than 100 vendors and about 45 bands to the street.</p><small class="loc">Calcutta Ave to E 161st St · run by <a href="https://waterlooarts.org/" target="_blank" rel="noopener" style="text-decoration:underline">Waterloo Arts</a></small></article>
+      <article class="cdc" style="--ck:var(--mint)"><div class="top"><small>Sat, Feb 20, 2027</small><span class="away" id="awayFeb"></span></div><h3>Brite Winter</h3><p>Cleveland’s winter music and art festival comes back to Waterloo on February 20, 2027. Its first year here, in 2026, put stages in the Beachland, the Treelawn and along the street.</p><small class="loc">Waterloo Arts District · <a href="https://britewinter.com/" target="_blank" rel="noopener" style="text-decoration:underline">britewinter.com</a></small></article>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="about" style="padding-top:0"><div class="wrap about">
+  <div class="ab-media">
+    <div class="arch"><div class="p"><img src="img/starpop.jpg" alt="Shops and sidewalk on Waterloo Road"></div><div class="stamp" aria-hidden="true"><svg viewBox="0 0 150 150"><defs><path id="stampPath" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text font-size="11" letter-spacing="3"><textPath href="#stampPath">WATERLOO · COLLINWOOD · CLEVELAND · </textPath></text></svg><b><small>Since</small>1870</b></div></div>
+  </div>
+  <div class="ab-text">
+    <span class="eyebrow c">About Waterloo</span>
+    <h2>Vineyards, rail yards, then rock and roll.</h2>
+    <p>Collinwood grew up on grapes and trains, filled with Irish, Italian and Slovenian families, and lost much of that when the factories closed. Cheap rents in the 1990s brought artists and musicians back, and the street has been rebuilding around them ever since.</p>
+    <div class="acc4">
+      <details open style="--ck:var(--red)"><summary><span class="y">1870</span><b>Grape capital</b><i aria-hidden="true">+</i></summary><p>Collamer, later Collinwood, was North America’s largest grape shipping point.</p></details>
+      <details style="--ck:var(--cobalt)"><summary><span class="y">1890</span><b>Railroad town</b><i aria-hidden="true">+</i></summary><p>A major switching point for the Lake Shore &amp; Michigan Southern Railroad.</p></details>
+      <details style="--ck:#D99A00"><summary><span class="y">1900s</span><b>Halls and homes</b><i aria-hidden="true">+</i></summary><p>The Beachland began as the Croatian Liberty Hall; the Treelawn fills the old Slovenian Workmen’s Home.</p></details>
+      <details style="--ck:#11A57A"><summary><span class="y">1990s</span><b>Artists move in</b><i aria-hidden="true">+</i></summary><p>Affordable rents draw young people, artists and the underground music scene.</p></details>
+      <details style="--ck:var(--pink)"><summary><span class="y">2002</span><b>Waterloo Arts forms</b><i aria-hidden="true">+</i></summary><p>Seed money from The Cleveland Foundation starts the nonprofit; the Arts Fest follows soon after.</p></details>
+      <details style="--ck:var(--red)"><summary><span class="y">2026</span><b>A full calendar</b><i aria-hidden="true">+</i></summary><p>Brite Winter moves to Waterloo and the Arts Fest turns 23.</p></details>
+    </div>
+    <blockquote class="q4">“If Cleveland is the home of Rock &amp; Roll, then Waterloo is the basement rec room where we turn the music up.”<small>Waterloo Arts District</small></blockquote>
+  </div>
+</div></section>
+
+<section class="sec" id="businesses" style="padding-top:0"><div class="wrap">
+  <div class="biz">
+    <div><span class="eyebrow">For Waterloo businesses</span><h2>Every listing here can open your own website.</h2><p>Visitors find the district first, then look for you. If your business doesn’t have a website yet, SiteSwitch will build you a free mockup first, so you can see it before you decide.</p><a class="btn btn-white" href="#directory">See a sample business page</a></div>
+    <div class="phones" aria-label="Sample business websites on phones">
+      <button class="pho a" data-n="Framed Gallery" aria-label="Open Framed Gallery"><span class="sc"><span class="pimg"><img src="img/framed_art.jpg" alt=""></span><b>Framed Gallery</b><small>15813 Waterloo Rd</small><span class="prow"><i></i><i></i><i></i></span><span class="pc" style="--ck:var(--red)">See the show</span></span></button>
+      <button class="pho b" data-n="Roux" aria-label="Open Roux"><span class="sc"><span class="pimg"><img src="img/roux_food.jpg" alt=""></span><b>Roux</b><small>16011 Waterloo Rd</small><span class="prow"><i></i><i></i><i></i></span><span class="pc" style="--ck:var(--mint)">Book a table</span></span></button>
+      <button class="pho c" data-n="Pop Life" aria-label="Open Pop Life"><span class="sc"><span class="pimg"><img src="img/poplife.jpg" alt=""></span><b>Pop Life</b><small>15619 Waterloo Rd</small><span class="prow"><i></i><i></i><i></i></span><span class="pc" style="--ck:var(--pink)">Book a class</span></span></button>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="ft-grid">
+    <div><a class="brand" href="#top" aria-label="Waterloo Arts District, home"><span class="logo" aria-hidden="true"><span class="lw">waterl<i class="lo lo1"></i><i class="lo lo2"></i></span><span class="ls">Arts District · Cleveland</span></span></a><p style="margin-top:16px">Waterloo Rd, E 152nd St to E 161st St<br>North Shore Collinwood, Cleveland, OH 44110</p></div>
+    <div><h4>Explore</h4><ul><li><a href="#directory">Directory</a></li><li><a href="#street">Map</a></li><li><a href="#happenings">Happenings</a></li><li><a href="#about">About</a></li></ul></div>
+    <div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/WaterlooArtsDistrict/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://waterlooarts.org/" target="_blank" rel="noopener">Waterloo Arts</a></li></ul></div>
+  </div>
+  <div class="fine"><span>Design concept by SiteSwitch, Cleveland. Not affiliated with the Waterloo Arts District.</span><span>Photos from each business’s public Google listing.</span></div>
+</div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Business page" aria-hidden="true">
+  <div class="dr-hero" id="drHero"><img id="drImg" alt=""><span class="tag" id="drCat"></span><h3 id="drName"></h3><button class="dr-x" id="drX" aria-label="Close">×</button></div>
+  <div class="dr-b">
+    <p id="drDesc"></p>
+    <dl class="facts" id="drFacts"></dl>
+    <div class="dr-act" id="drAct"></div>
+    <p class="pitch"><b>Sample business page.</b> On the live site each business adds its own photos, hours, menu or upcoming shows here, and links to its own website.</p>
+  </div>
+</aside>
+
+<script>
+const CAT={
+  art:{n:'Art & Galleries',v:'--c-art',img:'framed_wall',p:'Galleries and studios, from fiber art and stained glass to tattoos.'},
+  music:{n:'Music & Nightlife',v:'--c-music',img:'beachland',p:'Two historic halls and a neighborhood bar.'},
+  shop:{n:'Shops & Records',v:'--c-shop',img:'bluearrow',p:'Vinyl, vintage, pianos, custom tees, music merch and native plants.'},
+  food:{n:'Eat & Drink',v:'--c-food',img:'doinks',p:'Coffee, seafood, burgers, sausage, vegan plates and cocktails.'},
+  well:{n:'Wellness & Beauty',v:'--c-well',img:'poplife',p:'Yoga, boot-camp fitness, hair styling and community.'},
+  serv:{n:'Local Services',v:'--c-serv',img:'mcphillips',p:'Auto repair, plumbing and other neighborhood services.'}
+};
+const B=[
+ {n:'Waterloo Arts',c:'art',a:'15605 Waterloo Rd',num:15605,img:'waterlooarts',d:'The district’s nonprofit arts center: a main gallery, café exhibitions, programs, and the team behind the Arts Fest and First Fridays.',w:'https://waterlooarts.org/'},
+ {n:'Praxis Fiber Workshop',c:'art',a:'15301 Waterloo Rd',num:15301,img:'praxis',d:'A nonprofit fiber art center with a studio, a gallery, fiber art classes and Crop to Cloth, its textile shop.'},
+ {n:'Framed Gallery',c:'art',a:'15813 Waterloo Rd',num:15813,img:'framed_gallery',d:'Fine art by African American, African and African diaspora artists, with regular solo shows.',ph:'(216) 832-5101'},
+ {n:'William Busta Projects',c:'art',a:'15517 Waterloo Rd',num:15517,img:'busta',d:'A contemporary art gallery with changing exhibitions through the year.'},
+ {n:'Article Gallery',c:'art',a:'15316 Waterloo Rd',num:15316,img:'article',d:'A gallery dedicated to the paintings of New York artist and illustrator Paul Spina.',ph:'440-655-6954'},
+ {n:'BRICK Ceramic + Design Studio',c:'art',a:'420 E 161st St',num:16100,side:1,img:'brick',d:'A ceramics studio with workspace for clay artists and people learning the craft, plus Mortar, its gallery and shop.'},
+ {n:'Deep Dive Art Projects',c:'art',a:'423 E 156th St',num:15600,side:1,img:'deepdive',d:'A printshop and viewing room in a green-trimmed house on East 156th, plus art consulting. Visits by appointment.',w:'https://deepdiveart.com/'},
+ {n:'Maria Neil Art Project',c:'art',a:'15517 Waterloo Rd',num:15527,img:'marianeil',d:'A gallery for Cleveland and emerging artists, opening new shows on First Fridays.'},
+ {n:'Beachland Ballroom & Tavern',c:'music',a:'15711 Waterloo Rd',num:15711,img:'beachland',d:'The street’s anchor music venue, in the former Croatian Liberty Hall, with a ballroom and a tavern stage.',w:'https://www.beachlandballroom.com/',ph:'(216) 383-1124'},
+ {n:'The Treelawn',c:'music',a:'15335 Waterloo Rd',num:15335,img:'treelawn',d:'A social club for about 100 and a 600-capacity music hall in the historic Slovenian Workmen’s Home.',ph:'(216) 677-8733'},
+ {n:'Millard Fillmore Presidential Library',c:'music',a:'15617 Waterloo Rd',num:15617,img:'millard',d:'A neighborhood bar with a long craft beer list and a sense of humor about its name.'},
+ {n:'Blue Arrow Records & Books',c:'shop',a:'16001 Waterloo Rd',num:16001,img:'bluearrow',d:'Vinyl, CDs and books, with a floor covered in old record covers.',w:'https://www.bluearrowrecords.com/',ph:'(216) 486-2415',h:'Fri–Sun, 12–4 pm'},
+ {n:'STAR POP Vintage + Modern',c:'shop',a:'15813 Waterloo Rd',num:15815,img:'starpop',d:'Vintage toys, games, clothing and pop-culture finds on the corner.'},
+ {n:'This Way Out Vintage & Records',c:'shop',a:'15711 Waterloo Rd',num:15709,img:'thiswayout',d:'Vintage clothing and records inside the Beachland building.'},
+ {n:'Roux',c:'food',a:'16011 Waterloo Rd',num:16011,img:'roux_food',d:'East Coast seafood with New Orleans flair: oysters, lobster rolls and steak frites in a 45-seat room.',w:'https://www.facebook.com/p/Roux-on-Waterloo-61589564790642/',ph:'(216) 291-7510',h:'Wed–Thu 4–10, Fri–Sat 4–11, Sun 4–9'},
+ {n:'Doinks Burger Joint',c:'food',a:'15519 Waterloo Rd',num:15519,img:'doinks',d:'Smash burgers like the OG and the Sweet Heat, onion rings and a spicy pickle salad, in a red-booth diner room.',ph:'(216) 417-0211',h:'Tue–Sat, 4–10 pm'},
+ {n:'Millie’s Cocktails',c:'food',a:'15515 Waterloo Rd',num:15513,img:'millies',d:'A 34-seat “grandma-chic” cocktail bar with Hungarian-inspired comfort food and happy hour every weeknight.',w:'https://www.milliescocktails.com/'},
+ {n:'Citizen Pie',c:'food',a:'15710 Waterloo Rd',num:15710,img:'citizenpie',d:'Pizza across the street from the Beachland, under a wall-sized pop-art collage.'},
+ {n:'Pop Life',c:'well',a:'15619 Waterloo Rd',num:15619,img:'poplife',d:'A wellness space for yoga, art, movement and community, with the Nourish Wellness Cafe and Pop Shop inside, in the most colorful building on the street.',w:'https://www.poplifeuniverse.com/',ph:'(216) 644-7798'},
+ {n:'Azure Stained Glass Studio',c:'art',a:'16006 Waterloo Rd',num:16006,img:'azure',d:'A stained glass studio that makes, restores and repairs leaded windows for churches, businesses and homes. Visits by appointment.',w:'https://www.azurestainedglass.com/',ph:'216-357-2600'},
+ {n:'The Cleveland Rocks Shop',c:'shop',a:'15801 Waterloo Rd',num:15801,img:'clerocks',d:'Local music and band merch in the old Music Saves storefront, run by the nonprofit Cleveland Rocks: Past Present Future, with workshops and small shows.',w:'https://clevelandrocksppf.org/'},
+ {n:'Living Pianos',c:'shop',a:'16013 Waterloo Rd',num:16013,img:'livingpianos',d:'A piano showroom full of grands and uprights you can sit down and play. Visits by appointment.',w:'https://www.livingpianos.com/',ph:'(949) 244-3729'},
+ {n:'Meadow City Native Plant Nursery',c:'shop',a:'15006 Westropp Ave',img:'meadowcity',d:'A nursery that sells only native plants, just south of Waterloo. Closed for the season and reopening in spring 2027.',w:'https://meadowcitynursery.com/',h:'Closed for the season · reopens spring 2027'},
+ {n:'Six Shooter Coffee',c:'food',a:'15613 Waterloo Rd',num:15613,img:'sixshooter',d:'The neighborhood coffee shop and roaster, now owned by longtime baristas Sarah Stocum and Emily Flory.'},
+ {n:'Juicy Vegan',c:'food',a:'15430 Waterloo Rd',num:15430,img:'juicyvegan',d:'Plant-based burgers, Philly steaks and chik’n sandwiches, plus bowls, salads, smoothies and wellness teas.',w:'https://juicyvegan.net/',ph:'(844) 685-4331'},
+ {n:'Archdoggs',c:'food',a:'15706 Waterloo Rd',num:15706,img:'archdoggs',d:'A small hot dog shop serving loaded dogs to eat in or take out.'},
+ {n:'NuLife Fitness Camp',c:'well',a:'15430 Waterloo Rd',num:15440,img:'nulife',d:'Boot-camp style group fitness: HIIT, indoor cycling, strength training and hip-hop dance classes.',w:'https://nulifefitnesscamp.com/',ph:'(844) 685-4331'},
+ {n:'Larry’s Auto Clinic',c:'serv',a:'335 E 156th St',num:15598,side:1,img:'larrys',d:'A neighborhood auto repair shop a block north of Waterloo that also rents U-Haul trucks.'},
+ {n:'McPhillips Plumbing, Heating & A/C',c:'serv',a:'16115 Waterloo Rd',num:16115,img:'mcphillips',d:'Plumbing, heating, air conditioning and refrigeration service at the east end of the street.',ph:'(216) 481-1400'},
+ {n:'Cyclops Tattoo Studio',c:'art',a:'16006 Waterloo Rd',num:16008,img:'cyclops',d:'A tattoo studio at the east end of the street, its walls hung with flash and framed artwork.',ph:'(256) 553-3948'},
+ {n:'Rated G Styling Studio',c:'well',a:'15701 Waterloo Rd',num:15703,img:'ratedg',d:'A hair salon with bright styling stations set against a wall-to-wall graffiti mural.',ph:'(216) 417-0739'},
+ {n:'Ole Sarah’s Screen Printing & Graphics',c:'shop',a:'15701 Waterloo Rd',num:15701,img:'olesarahs',d:'Custom T-shirts, window decals, buttons and volume printing, with Cleveland-themed tees in the window.',ph:'(440) 241-6436'},
+ {n:'Raddell’s Sausage Shop',c:'food',a:'478 E 152nd St',num:15255,side:1,img:'raddells',d:'A butcher shop known for its smoked sausage, on East 152nd at the west end of the district.',w:'https://www.raddells.com/',ph:'(216) 486-1944'}
+];
+const $=s=>document.querySelector(s);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const IMG=k=>'img/'+k+'.jpg';
+const maps=b=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(b.n+', '+b.a+', Cleveland, OH 44110');
+
+/* marquee */
+$('#mq').innerHTML=[...B,...B].map(b=>`<span><i style="background:var(${CAT[b.c].v})"></i>${esc(b.n)}</span>`).join('');
+$('#stN').textContent=B.length;
+
+/* categories */
+const order=['art','music','shop','food','well'];const order6=[...order,'serv'];
+$('#cats').innerHTML=order.map((k,j)=>{const c=CAT[k],n=B.filter(b=>b.c===k).length;return `<button class="cat${j===0?' big':''}" style="--ck:var(${c.v})" data-k="${k}"><img src="${IMG(c.img)}" alt=""><span class="pill">${n} ${n===1?'place':'places'}</span><span class="go" aria-hidden="true">→</span><h3>${c.n}</h3><p>${c.p}</p></button>`}).join('');
+
+/* featured */
+document.querySelectorAll('.bub,.pho').forEach(b=>b.addEventListener('click',()=>openB(B.findIndex(x=>x.n===b.dataset.n))));
+
+/* directory */
+let filt='all',query='';
+$('#chips').innerHTML=`<button class="chip" data-k="all" aria-pressed="true">All places</button>`+order6.map(k=>`<button class="chip" data-k="${k}" style="--ck:var(${CAT[k].v})" aria-pressed="false"><i aria-hidden="true"></i>${CAT[k].n}</button>`).join('');
+$('#legend').innerHTML=order6.map(k=>`<span><i style="background:var(${CAT[k].v})"></i>${CAT[k].n}</span>`).join('');
+function setFilter(k){filt=k;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.k===k)));render();}
+$('#chips').addEventListener('click',e=>{const c=e.target.closest('.chip');if(c)setFilter(c.dataset.k)});
+$('#cats').addEventListener('click',e=>{const c=e.target.closest('.cat');if(!c)return;setFilter(c.dataset.k);$('#directory').scrollIntoView({behavior:'smooth'})});
+$('#q').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render()});
+function render(){
+  const list=B.map((b,i)=>({b,i})).sort((p,q)=>(p.b.num||99999)-(q.b.num||99999)).filter(({b})=>(filt==='all'||b.c===filt)&&(!query||(b.n+' '+b.a+' '+CAT[b.c].n).toLowerCase().includes(query)));
+  $('#count').textContent=list.length+' of '+B.length+' places';
+  const g=$('#grid');g.classList.toggle('all',filt==='all'&&!query);
+  const SZ=b=>b.img==='beachland'?' big':['poplife','bluearrow','livingpianos','sixshooter','raddells','ratedg'].includes(b.img)?' wide':'';
+  const NUM=b=>(b.a.match(/^\d+/)||['Waterloo'])[0];
+  g.innerHTML=list.length?list.map(({b,i})=>`<button class="fl${SZ(b)}${['art','music','well'].includes(b.c)?' w':''}" style="--ck:var(${CAT[b.c].v})" data-i="${i}" aria-label="Open ${esc(b.n)}, ${esc(b.a)}"><span class="fr"><img src="${IMG(b.img)}" alt=""><span class="num" aria-hidden="true">${NUM(b)}</span><span class="nm">${esc(b.n)}</span></span><span class="bk" aria-hidden="true"><span class="fcat">${CAT[b.c].n}</span><b>${esc(b.n)}</b><span class="d">${esc(b.d)}</span><span class="ad"><span>${esc(b.a)}</span><span>Open →</span></span></span></button>`).join(''):`<div class="empty">No places match “${esc(query)}”. Try another name, or clear the filter.</div>`;
+}
+
+/* street map */
+function drawStreet(){
+  const svg=$('#stSvg'),x0=70,x1=1140,lo=15250,hi=16120,X=n=>x0+(n-lo)/(hi-lo)*(x1-x0),Y=104;
+  const mut='#8F8AA0',road='#3A3550';
+  let s=`<rect x="${x0-60}" y="${Y-11}" width="${x1-x0+120}" height="22" rx="11" fill="${road}"/>`;
+  s+=`<line x1="${x0-48}" y1="${Y}" x2="${x1+48}" y2="${Y}" stroke="#FFC23D" stroke-width="2" stroke-dasharray="16 12" opacity=".8"/>`;
+  [[15200,'E 152nd St'],[15600,'E 156th St'],[16100,'E 161st St']].forEach(([n,t])=>{const x=Math.max(x0-36,X(n));s+=`<rect x="${x-6}" y="${Y-80}" width="12" height="160" rx="6" fill="${road}" opacity=".7"/><text x="${x+12}" y="${Y+86}" font-size="12" fill="${mut}">${t}</text>`});
+  for(let n=15300;n<=16000;n+=100)s+=`<text x="${X(n)}" y="${Y-84}" font-size="11" fill="${mut}" text-anchor="middle">${n}</text>`;
+  s+=`<text x="${x0-58}" y="${Y-100}" font-size="12" fill="${mut}">← Downtown · I-90</text>`;
+  let up=0,dn=0;
+  B.forEach((b,i)=>{if(!b.num)return;const x=X(b.num),north=b.num%2===1&&!b.side,y=north?Y-36-(up++%2)*20:Y+36+(dn++%2)*20;
+    s+=`<g class="pin" tabindex="0" role="button" data-i="${i}" aria-label="${esc(b.n)}, ${esc(b.a)}"><line x1="${x}" y1="${Y}" x2="${x}" y2="${y}" stroke="${mut}" stroke-width="1.2"/><circle cx="${x}" cy="${y}" r="8" fill="${css(CAT[b.c].v)}" stroke="#1E1B2B" stroke-width="3"/></g>`});
+  svg.innerHTML=s;
+}
+const tip=$('#stTip');
+function showTip(i){const b=B[i];tip.innerHTML=`<img src="${IMG(b.img)}" alt=""><span><b>${esc(b.n)}</b><small>${esc(b.a)} · ${CAT[b.c].n}</small></span>`;document.querySelectorAll('.pin').forEach(p=>p.classList.toggle('on',p.dataset.i==i));}
+const sv=$('#stSvg');
+sv.addEventListener('mouseover',e=>{const p=e.target.closest('.pin');if(p)showTip(+p.dataset.i)});
+sv.addEventListener('focusin',e=>{const p=e.target.closest('.pin');if(p)showTip(+p.dataset.i)});
+sv.addEventListener('click',e=>{const p=e.target.closest('.pin');if(p)openB(+p.dataset.i)});
+sv.addEventListener('keydown',e=>{const p=e.target.closest('.pin');if(p&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openB(+p.dataset.i)}});
+
+/* business page */
+let lastFocus=null;
+function openB(i){const b=B[i];lastFocus=document.activeElement;
+  $('#drHero').style.setProperty('--ck',`var(${CAT[b.c].v})`);$('#drImg').src=IMG(b.img);$('#drImg').alt=b.n;
+  $('#drName').textContent=b.n;$('#drCat').textContent=CAT[b.c].n;$('#drDesc').textContent=b.d;
+  const rows=[['Address',esc(b.a)+', Cleveland, OH 44110']];if(b.h)rows.push(['Hours',esc(b.h)]);if(b.ph)rows.push(['Phone',esc(b.ph)]);if(b.w)rows.push(['Online',esc(b.w.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''))]);
+  $('#drFacts').innerHTML=rows.map(r=>`<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('');
+  $('#drAct').innerHTML=(b.w?`<a class="btn btn-ink" href="${b.w}" target="_blank" rel="noopener">Visit website →</a>`:'')+`<a class="btn btn-line" href="${maps(b)}" target="_blank" rel="noopener">Directions</a>`;
+  $('#drawer').classList.add('on');$('#drawer').setAttribute('aria-hidden','false');$('#scrim').classList.add('on');document.body.style.overflow='hidden';
+  setTimeout(()=>$('#drX').focus(),50);}
+function closeB(){$('#drawer').classList.remove('on');$('#drawer').setAttribute('aria-hidden','true');$('#scrim').classList.remove('on');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+document.addEventListener('click',e=>{const c=e.target.closest('.card,.fcard,.fl');if(c)openB(+c.dataset.i)});
+$('#drX').onclick=closeB;$('#scrim').onclick=closeB;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeB()});
+
+/* next first Friday + countdown, Cleveland time */
+(function(){const NY=()=>new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));const now=NY();
+  const ff=(y,m)=>{const d=new Date(y,m,1);d.setDate(1+((5-d.getDay()+7)%7));d.setHours(17,0,0,0);return d};
+  let d=ff(now.getFullYear(),now.getMonth());const end=new Date(d);end.setHours(21);if(now>end)d=ff(now.getFullYear(),now.getMonth()+1);
+  const long=d.toLocaleString('en-US',{weekday:'long',month:'long',day:'numeric'});
+  $('#nextM').textContent=d.toLocaleString('en-US',{month:'short'});$('#nextN').textContent=d.getDate();
+  $('#nextT').textContent='Next: '+long;$('#cdWhen').textContent='Next First Friday · '+long;
+  const away=m=>{let n=m-now.getMonth();if(n<=0)n+=12;return n===1?'1 month away':n+' months away'};
+  $('#awaySep').textContent=away(8);
+  {const bw=new Date(2027,1,20),dd=Math.ceil((bw-now)/864e5);$('#awayFeb').textContent=(()=>{let m=(bw.getFullYear()-now.getFullYear())*12+bw.getMonth()-now.getMonth();if(now.getDate()>bw.getDate())m--;return dd<0?'Every February':m>=2?m+' months away':m===1?'1 month away':dd>1?dd+' days away':dd===1?'Tomorrow':'Today'})();}
+  const pad=v=>String(v).padStart(2,'0');
+  function tick(){const t=Math.max(0,d-NY());const live=t===0&&NY()<end;
+    $('#clock').innerHTML=[[Math.floor(t/864e5),'Days'],[Math.floor(t/36e5)%24,'Hours'],[Math.floor(t/6e4)%60,'Min'],[Math.floor(t/1e3)%60,'Sec']].map(([v,l])=>`<div><b>${pad(v)}</b><small>${l}</small></div>`).join('');}
+  tick();setInterval(tick,1000);})();
+
+
+/* mobile menu */
+(function(){const b=$('#menuBtn'),n=$('#nav');b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o))});n.addEventListener('click',e=>{if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();
+render();drawStreet();
+</script>
+
+</body></html>
